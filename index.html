@@ -15,26 +15,26 @@
         :root {
             --brand-primary: #6366f1;
             --brand-secondary: #a855f7;
-            --bg-light: #f8fafc;
+            --bg-light: #f8fafc; /* Off-white theme color */
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #ffffff;
+            background-color: var(--bg-light); /* Changed from pure white */
             color: #0f172a;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
         .premium-glass {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(248, 250, 252, 0.9); /* Matched to off-white bg */
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .tool-grid-card {
             background: #ffffff;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #cbd5e1; /* Slightly darker border for better definition */
             border-radius: 1.25rem;
             padding: 1.5rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,13 +66,13 @@
         }
 
         .tagline-premium {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             font-weight: 800;
-            color: #6366f1;
-            opacity: 0.8;
+            color: #4f46e5; /* Slightly darker indigo */
             margin-top: -2px;
+            /* Removed opacity for better reading */
         }
 
         .status-pill {
@@ -83,8 +83,8 @@
             text-transform: uppercase;
         }
 
-        .pill-soon { background: #f1f5f9; color: #64748b; }
-        .pill-live { background: #ecfdf5; color: #059669; }
+        .pill-soon { background: #e2e8f0; color: #475569; } /* Darkened for readability */
+        .pill-live { background: #d1fae5; color: #047857; } /* Darkened for readability */
 
         .search-container {
             position: relative;
@@ -96,10 +96,16 @@
             width: 100%;
             padding: 1rem 1.5rem 1rem 3.5rem;
             border-radius: 1rem;
-            border: 1px solid #e2e8f0;
-            background: #f8fafc;
-            font-size: 0.9rem;
+            border: 1px solid #cbd5e1; /* Darker border */
+            background: #ffffff; /* White input on off-white body */
+            color: #0f172a;
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: all 0.2s;
+        }
+
+        .search-input::placeholder {
+            color: #64748b; /* Darker placeholder text */
         }
 
         .search-input:focus {
@@ -119,9 +125,9 @@
         section { scroll-margin-top: 100px; }
 
         .category-tag {
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: #94a3b8;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: #64748b; /* Darkened from light gray */
             letter-spacing: 0.05em;
         }
     </style>
@@ -142,21 +148,24 @@
             </div>
             
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#tool-directory" class="text-xs font-bold text-slate-500 hover:text-indigo-600 uppercase tracking-widest transition-colors">Tool Directory</a>
-                <a href="#about" class="text-xs font-bold text-slate-500 hover:text-indigo-600 uppercase tracking-widest transition-colors">About</a>
-                <a href="#security" class="text-xs font-bold text-slate-500 hover:text-indigo-600 uppercase tracking-widest transition-colors">Security</a>
+                <!-- Changed text-slate-500 to text-slate-700 -->
+                <a href="#tool-directory" class="text-xs font-bold text-slate-700 hover:text-indigo-600 uppercase tracking-widest transition-colors">Tool Directory</a>
+                <a href="#about" class="text-xs font-bold text-slate-700 hover:text-indigo-600 uppercase tracking-widest transition-colors">About</a>
+                <a href="#security" class="text-xs font-bold text-slate-700 hover:text-indigo-600 uppercase tracking-widest transition-colors">Security</a>
             </div>
         </div>
     </nav>
 
     <!-- Header & Search -->
-    <header class="pt-32 pb-12 px-6 bg-white">
+    <header class="pt-32 pb-12 px-6 bg-transparent">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-3xl font-extrabold text-slate-900 mb-4">PDF Toolbox</h1>
-            <p class="text-slate-500 text-sm mb-8 font-medium">Search and access our 100% client-side PDF utilities.</p>
+            <!-- Changed text-slate-500 to text-slate-700 -->
+            <p class="text-slate-700 text-[15px] mb-8 font-medium">Search and access our 100% client-side PDF utilities.</p>
             
             <div class="search-container">
-                <i data-lucide="search" class="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+                <!-- Changed icon color to be darker -->
+                <i data-lucide="search" class="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500"></i>
                 <input type="text" id="toolSearch" class="search-input" placeholder="Search for tools (e.g. merge, remove logo, split)..." onkeyup="filterTools()">
             </div>
         </div>
@@ -169,7 +178,7 @@
             <!-- Category: Popular -->
             <div class="mb-4 flex items-center space-x-2">
                 <span class="category-tag uppercase">Core Utilities</span>
-                <div class="h-px bg-slate-100 flex-grow"></div>
+                <div class="h-px bg-slate-200 flex-grow"></div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-up mb-12" id="toolGrid">
@@ -178,14 +187,15 @@
                 <div class="tool-item" data-title="merge pdf combine join">
                     <div class="tool-grid-card" onclick="window.location.href='https://vishalkumar-netizen.github.io/PdfMerger/'">
                         <div class="flex justify-between items-start">
-                            <div class="tool-icon-box bg-orange-50 text-orange-500">
+                            <div class="tool-icon-box bg-orange-50 text-orange-600">
                                 <i data-lucide="combine" class="w-6 h-6"></i>
                             </div>
                             <span class="status-pill pill-live">Live</span>
                         </div>
                         <div>
-                            <h3 class="font-bold text-slate-800 text-lg">Merge PDF</h3>
-                            <p class="text-xs text-slate-500 leading-relaxed mt-1">Combine multiple PDFs into a single document instantly.</p>
+                            <h3 class="font-bold text-slate-900 text-lg">Merge PDF</h3>
+                            <!-- Changed text-slate-500 to text-slate-700 -->
+                            <p class="text-sm text-slate-700 leading-relaxed mt-1">Combine multiple PDFs into a single document instantly.</p>
                         </div>
                     </div>
                 </div>
@@ -194,46 +204,48 @@
                 <div class="tool-item" data-title="logo remover watermark clean stamp">
                     <div class="tool-grid-card" onclick="window.location.href='https://vishalkumar-netizen.github.io/ClearMark-PDF/'">
                         <div class="flex justify-between items-start">
-                            <div class="tool-icon-box bg-purple-50 text-purple-600">
+                            <div class="tool-icon-box bg-purple-50 text-purple-700">
                                 <i data-lucide="sparkles" class="w-6 h-6"></i>
                             </div>
                             <span class="status-pill pill-live">Live</span>
                         </div>
                         <div>
-                            <h3 class="font-bold text-slate-800 text-lg">Logo Remover</h3>
-                            <p class="text-xs text-slate-500 leading-relaxed mt-1">Clean documents by removing watermarks and logos.</p>
+                            <h3 class="font-bold text-slate-900 text-lg">Logo Remover</h3>
+                            <!-- Changed text-slate-500 to text-slate-700 -->
+                            <p class="text-sm text-slate-700 leading-relaxed mt-1">Clean documents by removing watermarks and logos.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Split PDF -->
                 <div class="tool-item" data-title="split pdf separate pages">
-                    <div class="tool-grid-card opacity-60">
+                    <!-- Increased opacity from 60 to 75 for better readability -->
+                    <div class="tool-grid-card opacity-75">
                         <div class="flex justify-between items-start">
-                            <div class="tool-icon-box bg-red-50 text-red-500">
+                            <div class="tool-icon-box bg-red-50 text-red-600">
                                 <i data-lucide="scissors" class="w-6 h-6"></i>
                             </div>
                             <span class="status-pill pill-soon">Soon</span>
                         </div>
                         <div>
-                            <h3 class="font-bold text-slate-800 text-lg">Split PDF</h3>
-                            <p class="text-xs text-slate-500 leading-relaxed mt-1">Extract specific pages or ranges from your documents.</p>
+                            <h3 class="font-bold text-slate-900 text-lg">Split PDF</h3>
+                            <p class="text-sm text-slate-700 leading-relaxed mt-1">Extract specific pages or ranges from your documents.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- PDF to JPG -->
                 <div class="tool-item" data-title="pdf to jpg convert images export">
-                    <div class="tool-grid-card opacity-60">
+                    <div class="tool-grid-card opacity-75">
                         <div class="flex justify-between items-start">
-                            <div class="tool-icon-box bg-emerald-50 text-emerald-500">
+                            <div class="tool-icon-box bg-emerald-50 text-emerald-600">
                                 <i data-lucide="image" class="w-6 h-6"></i>
                             </div>
                             <span class="status-pill pill-soon">Soon</span>
                         </div>
                         <div>
-                            <h3 class="font-bold text-slate-800 text-lg">PDF to JPG</h3>
-                            <p class="text-xs text-slate-500 leading-relaxed mt-1">Convert document pages into high-quality images.</p>
+                            <h3 class="font-bold text-slate-900 text-lg">PDF to JPG</h3>
+                            <p class="text-sm text-slate-700 leading-relaxed mt-1">Convert document pages into high-quality images.</p>
                         </div>
                     </div>
                 </div>
@@ -243,33 +255,36 @@
     </main>
 
     <!-- Information Sections -->
-    <div class="bg-slate-50 border-t border-slate-200 py-24">
+    <!-- Changed bg-slate-50 to bg-white for contrast against the new off-white body -->
+    <div class="bg-white border-t border-slate-200 py-24">
         <div class="max-w-4xl mx-auto px-6 space-y-24">
             
             <!-- About Section -->
             <section id="about" class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <h3 class="text-xs font-black text-indigo-600 uppercase tracking-[0.3em] mb-4">Philosophy</h3>
+                    <h3 class="text-sm font-black text-indigo-700 uppercase tracking-[0.3em] mb-4">Philosophy</h3>
                     <h2 class="text-3xl font-bold text-slate-900 mb-6 leading-tight">Securing documents at the source.</h2>
-                    <p class="text-sm text-slate-500 leading-relaxed font-medium">
+                    <!-- Changed text-slate-500 to text-slate-700 -->
+                    <p class="text-[15px] text-slate-700 leading-relaxed font-medium">
                         Meri PDF was built to solve a single problem: privacy. Most online tools require you to upload files to their servers. We don't. 
                         <br><br>
                         By using the latest browser technology, all our tools run 100% on your device. Your data never leaves your computer.
                     </p>
                 </div>
                 <div class="space-y-4">
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-start space-x-4">
-                        <div class="bg-indigo-50 p-2 rounded-lg"><i data-lucide="zap" class="w-4 h-4 text-indigo-600"></i></div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 flex items-start space-x-4">
+                        <div class="bg-indigo-100 p-2 rounded-lg"><i data-lucide="zap" class="w-5 h-5 text-indigo-700"></i></div>
                         <div>
-                            <h4 class="font-bold text-slate-800 text-sm">Ultra Fast</h4>
-                            <p class="text-[11px] text-slate-400 mt-1">Processing happens at the speed of your hardware.</p>
+                            <h4 class="font-bold text-slate-900 text-[15px]">Ultra Fast</h4>
+                            <!-- Increased size to text-xs and darker gray -->
+                            <p class="text-xs text-slate-600 mt-1 font-medium">Processing happens at the speed of your hardware.</p>
                         </div>
                     </div>
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-start space-x-4">
-                        <div class="bg-emerald-50 p-2 rounded-lg"><i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i></div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 flex items-start space-x-4">
+                        <div class="bg-emerald-100 p-2 rounded-lg"><i data-lucide="shield-check" class="w-5 h-5 text-emerald-700"></i></div>
                         <div>
-                            <h4 class="font-bold text-slate-800 text-sm">Safe & Confidential</h4>
-                            <p class="text-[11px] text-slate-400 mt-1">No server storage. No logs. No data harvesting.</p>
+                            <h4 class="font-bold text-slate-900 text-[15px]">Safe & Confidential</h4>
+                            <p class="text-xs text-slate-600 mt-1 font-medium">No server storage. No logs. No data harvesting.</p>
                         </div>
                     </div>
                 </div>
@@ -278,16 +293,17 @@
             <!-- Security Section -->
             <section id="security" class="bg-slate-900 rounded-[2.5rem] p-10 md:p-14 text-white">
                 <div class="max-w-2xl">
-                    <h3 class="text-xs font-black text-indigo-400 uppercase tracking-[0.3em] mb-4">Security Protocol</h3>
-                    <h2 class="text-3xl font-bold mb-8">Zero-Knowledge Architecture</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm text-slate-300 font-medium">
+                    <h3 class="text-sm font-black text-indigo-400 uppercase tracking-[0.3em] mb-4">Security Protocol</h3>
+                    <h2 class="text-3xl font-bold mb-8 text-white">Zero-Knowledge Architecture</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm font-medium">
                         <div class="space-y-3">
-                            <h4 class="text-white font-bold">Encrypted Memory</h4>
-                            <p class="text-xs opacity-70">Files are held only in RAM during processing and wiped instantly after.</p>
+                            <h4 class="text-white font-bold text-base">Encrypted Memory</h4>
+                            <!-- Increased opacity and size -->
+                            <p class="text-sm text-slate-200 opacity-90 leading-relaxed">Files are held only in RAM during processing and wiped instantly after.</p>
                         </div>
                         <div class="space-y-3">
-                            <h4 class="text-white font-bold">No Backend</h4>
-                            <p class="text-xs opacity-70">We have no database. There is literally nowhere for your data to be stored.</p>
+                            <h4 class="text-white font-bold text-base">No Backend</h4>
+                            <p class="text-sm text-slate-200 opacity-90 leading-relaxed">We have no database. There is literally nowhere for your data to be stored.</p>
                         </div>
                     </div>
                 </div>
@@ -297,16 +313,18 @@
     </div>
 
     <!-- Minimal Footer -->
-    <footer class="py-12 px-6 border-t border-slate-200 bg-white">
+    <footer class="py-12 px-6 border-t border-slate-200 bg-transparent">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center space-x-2">
                 <i data-lucide="layers" class="text-indigo-600 w-5 h-5"></i>
-                <span class="text-sm font-bold text-slate-800">Meri PDF</span>
+                <span class="text-sm font-bold text-slate-900">Meri PDF</span>
             </div>
-            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Designed by VK Basson &copy; 2025</p>
+            <!-- Increased from text-[10px] to text-xs and made darker -->
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-[0.15em]">Designed by VK Basson &copy; 2025</p>
             <div class="flex space-x-6">
-                <a href="#" class="text-slate-400 hover:text-indigo-600 transition-colors"><i data-lucide="github" class="w-4 h-4"></i></a>
-                <a href="#" class="text-slate-400 hover:text-indigo-600 transition-colors"><i data-lucide="mail" class="w-4 h-4"></i></a>
+                <!-- Changed text-slate-400 to text-slate-500 -->
+                <a href="#" class="text-slate-500 hover:text-indigo-600 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <a href="#" class="text-slate-500 hover:text-indigo-600 transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
             </div>
         </div>
     </footer>
