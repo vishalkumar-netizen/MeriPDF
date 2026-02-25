@@ -72,7 +72,6 @@
             font-weight: 800;
             color: #4f46e5; /* Slightly darker indigo */
             margin-top: -2px;
-            /* Removed opacity for better reading */
         }
 
         .status-pill {
@@ -83,8 +82,8 @@
             text-transform: uppercase;
         }
 
-        .pill-soon { background: #e2e8f0; color: #475569; } /* Darkened for readability */
-        .pill-live { background: #d1fae5; color: #047857; } /* Darkened for readability */
+        .pill-soon { background: #e2e8f0; color: #475569; } 
+        .pill-live { background: #d1fae5; color: #047857; } 
 
         .search-container {
             position: relative;
@@ -96,8 +95,8 @@
             width: 100%;
             padding: 1rem 1.5rem 1rem 3.5rem;
             border-radius: 1rem;
-            border: 1px solid #cbd5e1; /* Darker border */
-            background: #ffffff; /* White input on off-white body */
+            border: 1px solid #cbd5e1; 
+            background: #ffffff; 
             color: #0f172a;
             font-weight: 500;
             font-size: 0.95rem;
@@ -105,7 +104,7 @@
         }
 
         .search-input::placeholder {
-            color: #64748b; /* Darker placeholder text */
+            color: #64748b; 
         }
 
         .search-input:focus {
@@ -127,7 +126,7 @@
         .category-tag {
             font-size: 0.7rem;
             font-weight: 800;
-            color: #64748b; /* Darkened from light gray */
+            color: #64748b; 
             letter-spacing: 0.05em;
         }
     </style>
@@ -148,7 +147,6 @@
             </div>
             
             <div class="hidden md:flex items-center space-x-8">
-                <!-- Changed text-slate-500 to text-slate-700 -->
                 <a href="#tool-directory" class="text-xs font-bold text-slate-700 hover:text-indigo-600 uppercase tracking-widest transition-colors">Tool Directory</a>
                 <a href="#about" class="text-xs font-bold text-slate-700 hover:text-indigo-600 uppercase tracking-widest transition-colors">About</a>
                 <a href="#security" class="text-xs font-bold text-slate-700 hover:text-indigo-600 uppercase tracking-widest transition-colors">Security</a>
@@ -160,13 +158,11 @@
     <header class="pt-32 pb-12 px-6 bg-transparent">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-3xl font-extrabold text-slate-900 mb-4">PDF Toolbox</h1>
-            <!-- Changed text-slate-500 to text-slate-700 -->
             <p class="text-slate-700 text-[15px] mb-8 font-medium">Search and access our 100% client-side PDF utilities.</p>
             
             <div class="search-container">
-                <!-- Changed icon color to be darker -->
                 <i data-lucide="search" class="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500"></i>
-                <input type="text" id="toolSearch" class="search-input" placeholder="Search for tools (e.g. merge, remove logo, split)..." onkeyup="filterTools()">
+                <input type="text" id="toolSearch" class="search-input" placeholder="Search for tools (e.g. merge, doc to pdf, split)..." onkeyup="filterTools()">
             </div>
         </div>
     </header>
@@ -194,7 +190,6 @@
                         </div>
                         <div>
                             <h3 class="font-bold text-slate-900 text-lg">Merge PDF</h3>
-                            <!-- Changed text-slate-500 to text-slate-700 -->
                             <p class="text-sm text-slate-700 leading-relaxed mt-1">Combine multiple PDFs into a single document instantly.</p>
                         </div>
                     </div>
@@ -211,8 +206,23 @@
                         </div>
                         <div>
                             <h3 class="font-bold text-slate-900 text-lg">Logo Remover</h3>
-                            <!-- Changed text-slate-500 to text-slate-700 -->
                             <p class="text-sm text-slate-700 leading-relaxed mt-1">Clean documents by removing watermarks and logos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW: Doc to PDF -->
+                <div class="tool-item" data-title="doc2pdf doc to pdf convert word docx">
+                    <div class="tool-grid-card" onclick="window.location.href='https://vishalkumar-netizen.github.io/Doc2Pdf/'">
+                        <div class="flex justify-between items-start">
+                            <div class="tool-icon-box bg-blue-50 text-blue-700">
+                                <i data-lucide="file-text" class="w-6 h-6"></i>
+                            </div>
+                            <span class="status-pill pill-live">Live</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg">Doc to PDF</h3>
+                            <p class="text-sm text-slate-700 leading-relaxed mt-1">Convert your Word documents (.docx) to PDF format seamlessly.</p>
                         </div>
                     </div>
                 </div>
@@ -221,7 +231,7 @@
                 <div class="tool-item" data-title="compress pdf size reduce shrink">
                     <div class="tool-grid-card" onclick="window.location.href='https://vishalkumar-netizen.github.io/PDF-Size-Compressor/'">
                         <div class="flex justify-between items-start">
-                            <div class="tool-icon-box bg-blue-50 text-blue-600">
+                            <div class="tool-icon-box bg-indigo-50 text-indigo-600">
                                 <i data-lucide="file-down" class="w-6 h-6"></i>
                             </div>
                             <span class="status-pill pill-live">Live</span>
@@ -233,9 +243,8 @@
                     </div>
                 </div>
 
-                <!-- Compare PDF (New Feature) -->
+                <!-- Compare PDF -->
                 <div class="tool-item" data-title="compare pdf visual difference high fidelity">
-                    <!-- Note: Replace '#' with your actual URL -->
                     <div class="tool-grid-card" onclick="window.location.href='https://vishalkumar-netizen.github.io/Compare-PDF/'">
                         <div class="flex justify-between items-start">
                             <div class="tool-icon-box bg-cyan-50 text-cyan-600">
@@ -252,7 +261,6 @@
 
                 <!-- Split PDF -->
                 <div class="tool-item" data-title="split pdf separate pages">
-                    <!-- Increased opacity from 60 to 75 for better readability -->
                     <div class="tool-grid-card opacity-75">
                         <div class="flex justify-between items-start">
                             <div class="tool-icon-box bg-red-50 text-red-600">
